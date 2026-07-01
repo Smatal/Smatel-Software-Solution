@@ -50,7 +50,7 @@ export const homepageData = {
     ],
   },
   whyChooseUs: {
-    heading: "The Smatel Advantage",
+    heading: "The Smatal Advantage",
     description: "Why industry leaders choose us as their long-term technology partner.",
     reasons: [
       { title: "Custom-built solutions", description: "Tailored specifically to your operational nuances." },
@@ -94,7 +94,7 @@ export const homepageData = {
   },
   about: {
     heading: "Driven by Innovation",
-    description: "Smatel is an enterprise software engineering firm committed to bridging the gap between human ambition and technical capability. We partner with visionaries to build systems that matter.",
+    description: "Smatal is an enterprise software engineering firm committed to bridging the gap between human ambition and technical capability. We partner with visionaries to build systems that matter.",
     ctaText: "Read Our Story",
     href: "/about"
   },

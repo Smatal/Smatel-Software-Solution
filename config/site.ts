@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "Smatel",
+  name: "Smatal",
   description: "Intelligent Infrastructure for the Modern Enterprise.",
-  url: "https://smatel.com",
-  ogImage: "https://smatel.com/og.jpg",
+  url: "https://smatal.com",
+  ogImage: "https://smatal.com/og.jpg",
   links: {
-    twitter: "https://twitter.com/smatel",
-    github: "https://github.com/smatel",
+    twitter: "https://twitter.com/smatal",
+    github: "https://github.com/smatal",
   },
 }
 

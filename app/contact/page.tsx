@@ -32,7 +32,7 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground mt-1">hello@smatel.com</p>
+                    <p className="text-muted-foreground mt-1">hello@smatal.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

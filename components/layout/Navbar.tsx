@@ -18,7 +18,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="inline-block font-bold tracking-tight text-xl">SMATEL</span>
+            <span className="inline-block font-bold tracking-tight text-xl">SMATAL</span>
           </Link>
           <nav className="hidden md:flex gap-6">
             {links.map((link) => (

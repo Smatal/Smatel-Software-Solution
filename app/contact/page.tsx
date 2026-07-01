@@ -1,4 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -45,16 +48,16 @@ export default function ContactPage() {
             <div className="bg-muted/20 p-8 rounded-xl border border-border/50">
               <form className="space-y-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <input id="name" type="text" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="John Doe" />
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" type="text" placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <input id="email" type="email" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="john@company.com" />
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="john@company.com" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Message</label>
-                  <textarea id="message" rows={4} className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" placeholder="How can we help you?" />
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" rows={4} placeholder="How can we help you?" />
                 </div>
                 <button type="button" className={cn(buttonVariants({ variant: "default", size: "lg" }), "w-full")}>
                   Send Message

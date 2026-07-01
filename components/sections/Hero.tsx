@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative overflow-hidden py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm rounded-full bg-muted/50 border-primary/20 text-primary">
+          <Badge variant="secondary" className="mb-6">
             {hero.badge}
           </Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 text-foreground">

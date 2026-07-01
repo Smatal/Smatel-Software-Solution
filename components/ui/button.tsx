@@ -9,16 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
+        default: "bg-[linear-gradient(110deg,#4f46e5,45%,#818cf8,55%,#4f46e5)] bg-[length:200%_100%] animate-shine text-white shadow-[0_4px_15px_rgba(79,70,229,0.3)] hover:shadow-[0_6px_25px_rgba(79,70,229,0.5)] border border-indigo-400/30 hover:scale-[1.02] active:scale-[0.98]",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border border-indigo-500/20 bg-indigo-50/50 backdrop-blur-sm text-indigo-700 hover:bg-indigo-500/10 hover:border-indigo-500/40 shadow-[0_0_10px_rgba(79,70,229,0.05)] hover:shadow-[0_0_20px_rgba(79,70,229,0.15)] hover:scale-[1.02] active:scale-[0.98] dark:border-indigo-500/30 dark:text-indigo-300 dark:bg-indigo-500/10",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "border border-indigo-500/20 bg-white/80 backdrop-blur-md text-gray-900 hover:bg-white hover:border-indigo-500/40 shadow-[0_4px_15px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(79,70,229,0.15)] hover:scale-[1.02] active:scale-[0.98]",
         ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+          "hover:bg-indigo-500/10 hover:text-indigo-700 aria-expanded:bg-indigo-500/10 aria-expanded:text-indigo-700 dark:hover:bg-indigo-500/20 dark:hover:text-indigo-300",
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-indigo-600 underline-offset-4 hover:underline",
       },
       size: {
         default:

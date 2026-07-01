@@ -3,7 +3,7 @@
 import { homepageData } from "@/content/homepage";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion, Variants } from "motion/react";
+import { motion, Variants, useMotionValue, useSpring, useTransform, useMotionTemplate } from "motion/react";
 import { PremiumWidgetCard } from "@/components/ui/PremiumWidgetCard";
 
 const staggerContainer: Variants = {
@@ -24,9 +24,50 @@ const cardVariant: Variants = {
 export function ServicesOverview() {
   const { servicesOverview } = homepageData;
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
+
+  const gridX = useTransform(springX, [0, 2000], [0, -60]);
+  const gridY = useTransform(springY, [0, 1000], [0, -60]);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      className="py-24 bg-[#FAFAFA] relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      {/* Universal Interactive Parallax Grid */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div 
+          className="absolute -inset-[10%] opacity-[0.3]"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,102,241,0.5) 1px, transparent 1px)`,
+            backgroundSize: "64px 64px",
+            x: gridX,
+            y: gridY,
+          }}
+        />
+        
+        {/* Interactive Mouse Spotlight */}
+        <motion.div
+          className="absolute inset-0 mix-blend-overlay z-10"
+          style={{
+            background: useMotionTemplate`radial-gradient(600px circle at ${springX}px ${springY}px, rgba(99,102,241,0.3), transparent 80%)`,
+          }}
+        />
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] via-transparent to-[#FAFAFA] z-10" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground">{servicesOverview.heading}</h2>
           <p className="text-lg text-muted-foreground">{servicesOverview.description}</p>

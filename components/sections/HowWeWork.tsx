@@ -23,71 +23,107 @@ export function HowWeWork() {
   });
 
   return (
-    <section className="py-24 bg-background border-y border-border/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground">{howWeWork.heading}</h2>
-          <p className="text-lg text-muted-foreground">{howWeWork.description}</p>
+    <section className="py-24 lg:py-32 bg-zinc-50 border-y border-border/50 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        
+        <div className="text-center md:text-left mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 text-gray-900">{howWeWork.heading}</h2>
+          <p className="text-lg text-gray-600 font-medium max-w-xl">{howWeWork.description}</p>
         </div>
         
-        <div ref={containerRef} className="relative w-full max-w-4xl mx-auto">
-          {/* Background Track Line */}
-          <div className="absolute left-[20px] md:left-1/2 top-4 bottom-0 w-[2px] bg-gray-200 -translate-x-[1px]" />
+        <div ref={containerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative">
+          
+          {/* Left Column: Vertical Tracking Timeline */}
+          <div className="relative pl-8 md:pl-12 py-10 flex flex-col gap-16">
+            {/* Background Line */}
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-200 rounded-full" />
+            
+            {/* Animated Stroke Line */}
+            <svg className="absolute left-0 top-0 bottom-0 w-1 h-full overflow-visible">
+              <motion.line
+                x1="2" y1="0" x2="2" y2="100%"
+                stroke="oklch(0.541 0.17 282)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                style={{ pathLength }}
+              />
+            </svg>
 
-          {/* Animated Fill Line */}
-          <svg className="absolute left-[20px] md:left-1/2 top-4 bottom-0 w-[2px] h-full overflow-visible -translate-x-[1px]">
-            <motion.line
-              x1="0"
-              y1="0"
-              x2="0"
-              y2="100%"
-              stroke="oklch(0.541 0.17 282)"
-              strokeWidth="2"
-              style={{ pathLength }}
-            />
-          </svg>
-
-          {/* Timeline Nodes */}
-          <div className="flex flex-col gap-16 relative z-10">
             {howWeWork.steps.map((step, index) => {
               const isActive = activePhaseIndex >= index;
-              const isEven = index % 2 === 0;
               return (
-                <div key={index} className={`flex relative md:gap-0 ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                <div key={index} className="relative">
+                  {/* Indicator Dot */}
+                  <motion.div
+                    className={`absolute -left-8 md:-left-12 w-4 h-4 -translate-x-1/2 rounded-full border-4 border-zinc-50 transition-colors duration-500 z-10 ${
+                      isActive ? "bg-indigo-600" : "bg-gray-300"
+                    }`}
+                    animate={{
+                      scale: isActive ? 1.5 : 1,
+                      boxShadow: isActive ? "0 0 15px rgba(79,70,229,0.5)" : "none",
+                    }}
+                  />
                   
-                  {/* Content (Desktop Left/Right, Mobile Right) */}
-                  <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${isEven ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right'} pt-1 md:pt-2`}>
-                    <div className="inline-block px-3 py-1 mb-2 text-xs font-mono font-medium rounded-full bg-muted text-muted-foreground border border-border/50">
-                      Phase 0{index + 1}
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 text-foreground">{step.title}</h3>
-                    <p className="text-muted-foreground">{step.description}</p>
+                  <span className="block text-xs font-bold uppercase tracking-widest text-indigo-600 mb-2">Step 0{index + 1}</span>
+                  <h3 className={`text-2xl md:text-3xl font-black tracking-tight mb-4 transition-colors duration-500 ${
+                    isActive ? "text-gray-900" : "text-gray-400"
+                  }`}>
+                    {step.title}
+                  </h3>
+                  <div className={`overflow-hidden transition-all duration-500 ${isActive ? "max-h-40 opacity-100" : "max-h-0 opacity-0 lg:max-h-40 lg:opacity-60"}`}>
+                    <p className="text-gray-600 leading-relaxed max-w-md">
+                      {step.description}
+                    </p>
                   </div>
-
-                  {/* Central Animated Dot */}
-                  <div className="absolute left-[20px] md:static md:left-auto md:w-20 shrink-0 flex justify-center items-start md:items-center -translate-x-1/2 md:translate-x-0">
-                    <motion.div
-                      className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 bg-background transition-colors duration-300 ${
-                        isActive ? "border-[oklch(0.541_0.17_282)]" : "border-gray-300"
-                      }`}
-                      animate={{
-                        scale: isActive ? 1.1 : 1,
-                        boxShadow: isActive ? "0 0 20px oklch(0.541 0.17 282 / 0.2)" : "none",
-                      }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    >
-                      <div className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors duration-300 ${
-                        isActive ? "bg-[oklch(0.541_0.17_282)]" : "bg-transparent"
-                      }`} />
-                    </motion.div>
-                  </div>
-
-                  {/* Spacer for Desktop symmetry */}
-                  <div className="hidden md:block md:w-1/2" />
                 </div>
               );
             })}
           </div>
+
+          {/* Right Column: Sticky Floating Widgets (Genexlyf Style) */}
+          <div className="hidden lg:block relative">
+            <div className="sticky top-32 w-full aspect-square max-w-[500px] mx-auto bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl p-8 flex flex-col justify-center items-center">
+              
+              {/* Central Widget */}
+              <motion.div 
+                className="w-full bg-zinc-50 rounded-2xl border border-gray-100 p-6 shadow-sm mb-6"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <div className="w-5 h-5 bg-indigo-600 rounded-sm rotate-45" />
+                  </div>
+                  <div className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">ACTIVE</div>
+                </div>
+                <div className="h-4 w-3/4 bg-gray-200 rounded-full mb-3" />
+                <div className="h-4 w-1/2 bg-gray-200 rounded-full" />
+              </motion.div>
+
+              {/* Smaller Floating Widget */}
+              <motion.div 
+                className="absolute -right-8 top-1/4 bg-white p-4 rounded-xl border border-gray-100 shadow-xl"
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Velocity</div>
+                <div className="text-2xl font-black text-gray-900 tracking-tighter">98.5%</div>
+              </motion.div>
+              
+              {/* Bottom Floating Widget */}
+              <motion.div 
+                className="absolute -left-8 bottom-1/4 bg-white p-4 rounded-xl border border-gray-100 shadow-xl flex items-center gap-3"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              >
+                <div className="w-8 h-8 rounded-full bg-blue-100" />
+                <div className="w-8 h-8 rounded-full bg-red-100 -ml-4 border-2 border-white" />
+                <div className="w-8 h-8 rounded-full bg-green-100 -ml-4 border-2 border-white" />
+                <span className="text-xs font-bold ml-2">Team Setup</span>
+              </motion.div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

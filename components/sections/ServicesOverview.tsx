@@ -16,7 +16,7 @@ export function ServicesOverview() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesOverview.services.map((service, index) => (
             <Link key={index} href={service.href} className="group">
-              <Card className="h-full transition-all duration-200 hover:bg-muted/50 hover:border-primary/50 border-border/50">
+              <Card className="h-full">
                 <CardHeader className="flex flex-row items-center justify-between p-6">
                   <CardTitle className="text-lg font-medium text-foreground">{service.title}</CardTitle>
                   <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />

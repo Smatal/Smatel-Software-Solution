@@ -4,7 +4,7 @@ export function HowWeWork() {
   const { howWeWork } = homepageData;
 
   return (
-    <section className="py-24 bg-muted/30 border-y border-border/50">
+    <section className="py-24 bg-background border-y border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground">{howWeWork.heading}</h2>

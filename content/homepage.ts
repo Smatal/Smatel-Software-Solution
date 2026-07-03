@@ -28,12 +28,42 @@ export const homepageData = {
     heading: "Comprehensive Enterprise Services",
     description: "End-to-end solutions tailored to your organization's unique operational requirements.",
     services: [
-      { title: "Development", href: "/services/development" },
-      { title: "ERP Solutions", href: "/services/erp" },
-      { title: "AI & Automation", href: "/services/ai-automation" },
-      { title: "Cloud Solutions", href: "/services/cloud" },
-      { title: "Consulting", href: "/services/consulting" },
-      { title: "Support & Maintenance", href: "/services/support" },
+      { 
+        title: "Development", 
+        href: "/services/development",
+        description: "Custom, high-performance web and mobile applications engineered for massive scale.",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        title: "ERP Solutions", 
+        href: "/services/erp",
+        description: "Intelligent resource planning systems to centralize and automate your enterprise operations.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+      },
+      { 
+        title: "AI & Automation", 
+        href: "/services/ai-automation",
+        description: "Machine learning models and automated workflows to reduce manual overhead and predict outcomes.",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop"
+      },
+      { 
+        title: "Cloud Solutions", 
+        href: "/services/cloud",
+        description: "Secure, scalable cloud architectures deployed across AWS, Azure, and Google Cloud.",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+      },
+      { 
+        title: "Consulting", 
+        href: "/services/consulting",
+        description: "Strategic technological advisory to navigate digital transformation and modernize legacy systems.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        title: "Support & Maintenance", 
+        href: "/services/support",
+        description: "24/7 dedicated system monitoring, security patching, and continuous performance optimization.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      }
     ],
   },
   howWeWork: {
@@ -65,12 +95,42 @@ export const homepageData = {
     heading: "Industries We Serve",
     description: "Domain expertise across critical sectors.",
     sectors: [
-      { name: "Manufacturing", href: "/industries/manufacturing" },
-      { name: "Healthcare", href: "/industries/healthcare" },
-      { name: "Retail & E-commerce", href: "/industries/retail" },
-      { name: "Education", href: "/industries/education" },
-      { name: "Finance", href: "/industries/finance" },
-      { name: "Logistics", href: "/industries/logistics" }
+      { 
+        name: "Manufacturing", 
+        href: "/industries/manufacturing",
+        description: "Smart factory automation, IoT integration, and predictive maintenance solutions for Industry 4.0.",
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        name: "Healthcare", 
+        href: "/industries/healthcare",
+        description: "Secure patient data systems, telemedicine platforms, and compliant health tech infrastructure.",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        name: "Retail & E-commerce", 
+        href: "/industries/retail",
+        description: "Scalable digital storefronts, inventory management systems, and unified commerce experiences.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        name: "Education", 
+        href: "/industries/education",
+        description: "E-learning platforms, student management systems, and interactive digital classrooms.",
+        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop"
+      },
+      { 
+        name: "Finance", 
+        href: "/industries/finance",
+        description: "High-frequency trading platforms, secure banking portals, and fintech blockchain solutions.",
+        image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        name: "Logistics", 
+        href: "/industries/logistics",
+        description: "Global supply chain tracking, fleet management software, and automated warehousing systems.",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+      }
     ]
   },
   technology: {
@@ -87,9 +147,34 @@ export const homepageData = {
     heading: "Proven Solutions",
     description: "Real-world impact delivered through intelligent software.",
     projects: [
-      { title: "Global ERP Implementation", category: "Manufacturing", href: "/portfolio/global-erp" },
-      { title: "Patient Data System", category: "Healthcare", href: "/portfolio/patient-data" },
-      { title: "Supply Chain Automation", category: "Logistics", href: "/portfolio/supply-chain" }
+      { 
+        title: "Global ERP Implementation", 
+        category: "Manufacturing", 
+        href: "/portfolio/global-erp",
+        description: "A complete digital overhaul of legacy supply chain systems, resulting in a 40% increase in operational efficiency.",
+        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        title: "Patient Data System", 
+        category: "Healthcare", 
+        href: "/portfolio/patient-data",
+        description: "A highly secure, HIPAA-compliant platform managing records for over 2 million patients globally.",
+        image: "https://images.unsplash.com/photo-1551076805-e18690c5e531?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        title: "Supply Chain Automation", 
+        category: "Logistics", 
+        href: "/portfolio/supply-chain",
+        description: "AI-driven predictive routing that reduced global shipping delays by over 25%.",
+        image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop"
+      },
+      { 
+        title: "Fintech Trading Portal", 
+        category: "Finance", 
+        href: "/portfolio/fintech",
+        description: "A high-frequency web trading interface processing millions of transactions per second with zero downtime.",
+        image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=2030&auto=format&fit=crop"
+      }
     ]
   },
   about: {

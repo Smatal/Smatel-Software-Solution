@@ -87,14 +87,23 @@ export function WhatWeDo() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {whatWeDo.pillars.map((pillar, index) => (
-            <motion.div key={index} variants={itemVariants} className="h-full">
-              <PremiumWidgetCard className="p-8 h-full">
-                <h3 className="text-2xl font-bold mb-3 text-gray-900 tracking-tight">{pillar.title}</h3>
-                <p className="text-gray-600 leading-relaxed font-medium">{pillar.description}</p>
-              </PremiumWidgetCard>
-            </motion.div>
-          ))}
+          {whatWeDo.pillars.map((pillar, index) => {
+            const icons = [
+              <div key="icon1" className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 shadow-inner"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>,
+              <div key="icon2" className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6 shadow-inner"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>,
+              <div key="icon3" className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 shadow-inner"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg></div>
+            ];
+            return (
+              <motion.div key={index} variants={itemVariants} className="h-full">
+                <PremiumWidgetCard className="p-8 h-full relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {icons[index % icons.length]}
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 tracking-tight">{pillar.title}</h3>
+                  <p className="text-gray-600 leading-relaxed font-medium">{pillar.description}</p>
+                </PremiumWidgetCard>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

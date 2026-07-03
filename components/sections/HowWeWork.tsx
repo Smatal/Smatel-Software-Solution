@@ -96,8 +96,19 @@ export function HowWeWork() {
                   </div>
                   <div className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">ACTIVE</div>
                 </div>
-                <div className="h-4 w-3/4 bg-gray-200 rounded-full mb-3" />
-                <div className="h-4 w-1/2 bg-gray-200 rounded-full" />
+                <div className="flex flex-col gap-2 mt-4">
+                  <div className="flex justify-between items-center text-sm font-semibold text-gray-700">
+                    <span>Systems Operational</span>
+                    <span className="text-indigo-600">100%</span>
+                  </div>
+                  <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-indigo-600 w-full rounded-full" />
+                  </div>
+                  <div className="flex justify-between items-center text-sm font-semibold text-gray-700 mt-2">
+                    <span>Code Deployed</span>
+                    <span className="text-emerald-600">Success</span>
+                  </div>
+                </div>
               </motion.div>
 
               {/* Smaller Floating Widget */}

@@ -4,8 +4,6 @@ import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Industries } from "@/components/sections/Industries";
-import { Technology } from "@/components/sections/Technology";
-import { Portfolio } from "@/components/sections/Portfolio";
 import { AboutBrief } from "@/components/sections/AboutBrief";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -18,8 +16,6 @@ export default function Home() {
       <HowWeWork />
       <WhyChooseUs />
       <Industries />
-      <Technology />
-      <Portfolio />
       <AboutBrief />
       <ContactCTA />
     </div>

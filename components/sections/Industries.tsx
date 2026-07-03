@@ -86,17 +86,41 @@ export function Industries() {
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {industries.sectors.map((sector, index) => (
-            <motion.div key={index} variants={cardVariant} className="h-full">
-              <Link href={sector.href} className="group block h-full">
-                <PremiumWidgetCard className="flex items-center justify-center text-center p-6 min-h-[120px]">
-                  <h3 className="text-base md:text-lg font-medium text-foreground group-hover:text-primary transition-colors">
-                    {sector.name}
-                  </h3>
-                </PremiumWidgetCard>
-              </Link>
-            </motion.div>
-          ))}
+          {industries.sectors.map((sector, index) => {
+            const gradients = [
+              "from-blue-500/20 via-indigo-500/20 to-purple-500/20",
+              "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
+              "from-orange-500/20 via-amber-500/20 to-yellow-500/20",
+              "from-pink-500/20 via-rose-500/20 to-red-500/20",
+              "from-violet-500/20 via-fuchsia-500/20 to-purple-500/20",
+              "from-cyan-500/20 via-sky-500/20 to-blue-500/20"
+            ];
+            const bgGradient = gradients[index % gradients.length];
+
+            return (
+              <motion.div key={index} variants={cardVariant} className="h-full">
+                <Link href={sector.href} className="group relative block h-[280px] w-full overflow-hidden rounded-[2rem] shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-200/50 bg-white">
+                  
+                  {/* Organic Abstract CSS Mesh Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-50 group-hover:opacity-100 transition-opacity duration-700`} />
+                  
+                  {/* Subtle Tech Pattern Overlay */}
+                  <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.8) 1px, transparent 0)', backgroundSize: '16px 16px' }} />
+                  
+                  {/* Animated Glowing Orb */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/40 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-1000" />
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
+                    <h3 className="text-2xl font-bold mb-2 text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors">{sector.name}</h3>
+                    <p className="text-slate-600 text-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 line-clamp-3 mb-2 font-medium">
+                      {sector.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

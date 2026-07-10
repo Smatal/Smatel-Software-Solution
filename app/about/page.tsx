@@ -1,5 +1,5 @@
 import { homepageData } from "@/content/homepage";
-import { HowWeWork } from "@/components/sections/HowWeWork";
+import { Process } from "@/components/sections/Process";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
         </div>
       </section>
       <WhyChooseUs />
-      <HowWeWork />
+      <Process />
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function IndustriesPage() {
               const bgGradient = gradients[index % gradients.length];
               
               return (
-              <Link key={index} href={sector.href} className="group relative h-96 w-full overflow-hidden rounded-3xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-200/50 bg-white">
+              <div key={index} className="group relative h-96 w-full overflow-hidden rounded-3xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-200/50 bg-white">
                 
                 {/* Organic Abstract CSS Mesh Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-50 group-hover:opacity-100 transition-opacity duration-700`} />
@@ -61,7 +61,7 @@ export default function IndustriesPage() {
                     Explore Solutions <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                   </div>
                 </div>
-              </Link>
+              </div>
               );
             })}
           </div>

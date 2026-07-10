@@ -1,192 +1,152 @@
 export const homepageData = {
   hero: {
     badge: "Enterprise Grade Solutions",
-    heading: "Intelligent Infrastructure for the Modern Enterprise.",
-    description: "We build scalable, secure, and high-performance software systems that empower global organizations to optimize operations and accelerate digital transformation.",
-    primaryCta: { text: "Request a Demo", href: "/contact" },
-    secondaryCta: { text: "Explore Services", href: "/services" },
+    heading: "End-to-end digital solutions for growing businesses.",
+    description: "We are a trusted technology partner that helps businesses plan, build, automate, launch, support, and grow through customized software solutions.",
+    primaryCta: { text: "Start Your Project", href: "/contact" },
+    secondaryCta: { text: "Explore Solutions", href: "/services" },
   },
-  whatWeDo: {
-    heading: "Built for Scale. Engineered for Excellence.",
-    description: "We bridge the gap between complex technological capabilities and intuitive, outcome-driven business applications.",
-    pillars: [
-      {
-        title: "Software Development",
-        description: "Custom-built, high-performance applications designed to solve your most complex business challenges with modern tech stacks.",
-      },
-      {
-        title: "Business Automation",
-        description: "Streamline operations and reduce manual overhead by automating critical workflows across your entire organization.",
-      },
-      {
-        title: "Digital Transformation",
-        description: "Modernize legacy systems and transition to scalable cloud architectures to future-proof your enterprise.",
-      },
+  stats: {
+    heading: "Trusted by Businesses Across Industries",
+    description: "Real numbers from real client partnerships.",
+    items: [
+      { value: 120, suffix: "+", label: "Happy Clients" },
+      { value: 250, suffix: "+", label: "Projects Delivered" },
+      { value: 10, suffix: "+", label: "Industries Served" },
+      { value: 9, suffix: "", label: "Solutions Developed" },
+      { value: 7, suffix: "+", label: "Years of Experience" },
+      { value: 99, suffix: "%", label: "Support Availability" },
     ],
   },
-  servicesOverview: {
-    heading: "Comprehensive Enterprise Services",
-    description: "End-to-end solutions tailored to your organization's unique operational requirements.",
-    services: [
-      { 
-        title: "Development", 
-        href: "/services/development",
-        description: "Custom, high-performance web and mobile applications engineered for massive scale.",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+  solutionCategories: {
+    heading: "Complete Digital Solutions",
+    description: "Everything you need to run, manage, and scale your business.",
+    categories: [
+      {
+        title: "Custom Software Development",
+        tagline: "Software built exactly for how you work",
+        businessProblem: "Off-the-shelf tools can't keep up with your unique workflows and growing complexity.",
+        description: "Business Websites, Web Applications, Mobile Applications, Custom Software, Customer Portals, and SaaS Products.",
+        icon: "laptop",
+        slug: "custom-software-development",
       },
-      { 
-        title: "ERP Solutions", 
-        href: "/services/erp",
-        description: "Intelligent resource planning systems to centralize and automate your enterprise operations.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+      {
+        title: "Web Development",
+        tagline: "High-performance websites that convert",
+        businessProblem: "Your website isn't generating leads, loads slowly, or doesn't represent your brand professionally.",
+        description: "Corporate websites, landing pages, e-commerce platforms, and web applications built for performance and conversions.",
+        icon: "globe",
+        slug: "web-development",
       },
-      { 
-        title: "AI & Automation", 
-        href: "/services/ai-automation",
-        description: "Machine learning models and automated workflows to reduce manual overhead and predict outcomes.",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop"
+      {
+        title: "Mobile App Development",
+        tagline: "Apps your customers will actually use",
+        businessProblem: "Your business has no mobile presence, or your existing app fails to retain users.",
+        description: "Native and cross-platform mobile apps for iOS and Android, built for performance and user engagement.",
+        icon: "smartphone",
+        slug: "mobile-app-development",
       },
-      { 
-        title: "Cloud Solutions", 
-        href: "/services/cloud",
-        description: "Secure, scalable cloud architectures deployed across AWS, Azure, and Google Cloud.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+      {
+        title: "ERP Solutions",
+        tagline: "One system for your entire business",
+        businessProblem: "Disconnected departments, manual data entry, and lack of real-time visibility are slowing growth.",
+        description: "Fully integrated ERP systems covering finance, HR, inventory, procurement, and operations.",
+        icon: "building",
+        slug: "erp-solutions",
       },
-      { 
-        title: "Consulting", 
-        href: "/services/consulting",
-        description: "Strategic technological advisory to navigate digital transformation and modernize legacy systems.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+      {
+        title: "CRM Solutions",
+        tagline: "Never lose a lead again",
+        businessProblem: "Customer data is scattered, follow-ups are missed, and your sales team lacks visibility.",
+        description: "Centralized CRM to track leads, manage pipelines, automate follow-ups, and grow revenue.",
+        icon: "users",
+        slug: "crm-solutions",
       },
-      { 
-        title: "Support & Maintenance", 
-        href: "/services/support",
-        description: "24/7 dedicated system monitoring, security patching, and continuous performance optimization.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-      }
+      {
+        title: "Billing Solutions",
+        tagline: "Get paid faster, with zero manual effort",
+        businessProblem: "Manual invoicing is error-prone, slow, and makes it hard to track financial health in real time.",
+        description: "Automated billing, invoicing, payment tracking, and financial reporting in one streamlined platform.",
+        icon: "receipt",
+        slug: "billing-solutions",
+      },
+      {
+        title: "School Management",
+        tagline: "Automate every aspect of school administration",
+        businessProblem: "Paper-based processes, missed fees, and poor parent-teacher communication are holding institutions back.",
+        description: "Comprehensive school ERP covering admissions, attendance, exams, fees, and parent communication.",
+        icon: "graduation-cap",
+        slug: "school-management",
+      },
+      {
+        title: "Digital Marketing",
+        tagline: "Reach more customers, grow your brand",
+        businessProblem: "Your competitors are ranking above you online and capturing the customers that should be yours.",
+        description: "SEO, Google Ads, social media marketing, lead generation, and brand growth strategies.",
+        icon: "trending-up",
+        slug: "digital-marketing",
+      },
+      {
+        title: "Support & Maintenance",
+        tagline: "Keep your systems running at peak performance",
+        businessProblem: "Unexpected downtime, security gaps, and slow performance are costing you money and credibility.",
+        description: "Ongoing technical support, maintenance, security updates, performance monitoring, and cloud management.",
+        icon: "life-buoy",
+        slug: "support-maintenance",
+      },
     ],
-  },
-  howWeWork: {
-    heading: "Our Delivery Process",
-    description: "A transparent, milestone-driven approach ensuring predictable outcomes from inception to deployment.",
-    steps: [
-      { title: "Discovery", description: "Deep dive into your business goals, technical constraints, and operational bottlenecks." },
-      { title: "Planning", description: "Architectural blueprinting, roadmap creation, and resource allocation." },
-      { title: "Design", description: "User experience mapping, prototyping, and technical system design." },
-      { title: "Development", description: "Agile engineering utilizing modern, scalable technologies." },
-      { title: "Testing", description: "Rigorous QA, security auditing, and performance load testing." },
-      { title: "Deployment", description: "Seamless integration and rollout with zero downtime strategies." },
-      { title: "Support", description: "Ongoing maintenance, monitoring, and continuous improvement." },
-    ],
-  },
-  whyChooseUs: {
-    heading: "The Smatal Advantage",
-    description: "Why industry leaders choose us as their long-term technology partner.",
-    reasons: [
-      { title: "Custom-built solutions", description: "Tailored specifically to your operational nuances." },
-      { title: "Enterprise-ready architecture", description: "Systems designed to handle massive scale and complexity." },
-      { title: "Long-term partnership", description: "We invest in your success beyond the initial deployment." },
-      { title: "Performance-focused engineering", description: "Optimized for speed, efficiency, and resource management." },
-      { title: "Reliable support", description: "24/7 dedicated assistance and continuous system monitoring." },
-      { title: "Security by design", description: "Bank-grade encryption and compliance with global standards." },
-    ]
   },
   industries: {
     heading: "Industries We Serve",
-    description: "Domain expertise across critical sectors.",
+    description: "Customized solutions designed to meet the specific demands of your sector.",
     sectors: [
-      { 
-        name: "Manufacturing", 
-        href: "/industries/manufacturing",
-        description: "Smart factory automation, IoT integration, and predictive maintenance solutions for Industry 4.0.",
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        name: "Healthcare", 
-        href: "/industries/healthcare",
-        description: "Secure patient data systems, telemedicine platforms, and compliant health tech infrastructure.",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        name: "Retail & E-commerce", 
-        href: "/industries/retail",
-        description: "Scalable digital storefronts, inventory management systems, and unified commerce experiences.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        name: "Education", 
-        href: "/industries/education",
-        description: "E-learning platforms, student management systems, and interactive digital classrooms.",
-        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop"
-      },
-      { 
-        name: "Finance", 
-        href: "/industries/finance",
-        description: "High-frequency trading platforms, secure banking portals, and fintech blockchain solutions.",
-        image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        name: "Logistics", 
-        href: "/industries/logistics",
-        description: "Global supply chain tracking, fleet management software, and automated warehousing systems.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
-      }
-    ]
+      { name: "Education", description: "E-learning, ERP, and administration systems.", image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop" },
+      { name: "Healthcare", description: "Telemedicine, EHR, and compliant infrastructure.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Retail", description: "E-commerce, POS, and inventory management.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Manufacturing", description: "Supply chain, ERP, and smart factory solutions.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Logistics", description: "Fleet tracking, warehousing, and route optimization.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Finance", description: "Trading platforms, secure portals, and fintech tools.", image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Hospitality", description: "Booking systems, CRM, and property management.", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Construction", description: "Project management, bidding, and resource allocation.", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop" },
+      { name: "Startups", description: "Rapid prototyping, MVP development, and scaling tech.", image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop" },
+      { name: "Small & Medium Businesses", description: "Business automation, digital presence, and CRM.", image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070&auto=format&fit=crop" },
+    ],
   },
-  technology: {
-    heading: "Enterprise Tech Stack",
-    description: "We utilize robust, modern technologies to guarantee system longevity.",
-    categories: [
-      { name: "Frontend", stack: "React, Next.js, Vue, TypeScript" },
-      { name: "Backend", stack: "Node.js, Python, Go, Java" },
-      { name: "Cloud & DevOps", stack: "AWS, Azure, Docker, Kubernetes" },
-      { name: "Database", stack: "PostgreSQL, MongoDB, Redis" }
-    ]
+  process: {
+    heading: "Our Business Journey",
+    description: "We are your long-term partner, guiding you from the initial idea to continuous business growth.",
+    steps: [
+      { title: "Understand", description: "We dive deep into your business problems and objectives." },
+      { title: "Plan", description: "We create a strategic roadmap and technical architecture." },
+      { title: "Design", description: "We design intuitive workflows and user experiences." },
+      { title: "Develop", description: "We build scalable, secure, and robust software." },
+      { title: "Deploy", description: "We launch your solution smoothly and securely." },
+      { title: "Support", description: "We provide ongoing maintenance and technical assistance." },
+      { title: "Grow", description: "We help you scale and expand your digital presence." },
+    ],
   },
-  portfolio: {
-    heading: "Proven Solutions",
-    description: "Real-world impact delivered through intelligent software.",
-    projects: [
-      { 
-        title: "Global ERP Implementation", 
-        category: "Manufacturing", 
-        href: "/portfolio/global-erp",
-        description: "A complete digital overhaul of legacy supply chain systems, resulting in a 40% increase in operational efficiency.",
-        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        title: "Patient Data System", 
-        category: "Healthcare", 
-        href: "/portfolio/patient-data",
-        description: "A highly secure, HIPAA-compliant platform managing records for over 2 million patients globally.",
-        image: "https://images.unsplash.com/photo-1551076805-e18690c5e531?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        title: "Supply Chain Automation", 
-        category: "Logistics", 
-        href: "/portfolio/supply-chain",
-        description: "AI-driven predictive routing that reduced global shipping delays by over 25%.",
-        image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop"
-      },
-      { 
-        title: "Fintech Trading Portal", 
-        category: "Finance", 
-        href: "/portfolio/fintech",
-        description: "A high-frequency web trading interface processing millions of transactions per second with zero downtime.",
-        image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=2030&auto=format&fit=crop"
-      }
-    ]
+  whyChooseUs: {
+    heading: "Why Choose Smatel",
+    description: "We focus on trust, reliability, and delivering measurable business value.",
+    reasons: [
+      { title: "Tailor-Made Solutions", description: "Software built specifically to fit your unique business operations." },
+      { title: "Business-Focused Approach", description: "We prioritize your ROI and operational efficiency above all else." },
+      { title: "Scalable Systems", description: "Our architecture grows seamlessly alongside your business." },
+      { title: "Dedicated Support", description: "Reliable, long-term assistance whenever you need it." },
+      { title: "End-to-End Partnership", description: "From planning to marketing, we handle your entire digital journey." },
+      { title: "Reliable Delivery", description: "Predictable outcomes and transparent communication throughout the process." },
+    ],
   },
   about: {
-    heading: "Driven by Innovation",
-    description: "Smatal is an enterprise software engineering firm committed to bridging the gap between human ambition and technical capability. We partner with visionaries to build systems that matter.",
+    heading: "Driven by Business Value",
+    description: "Smatel is an enterprise software engineering firm committed to bridging the gap between business ambition and technical capability. We partner with leaders to build systems that matter.",
     ctaText: "Read Our Story",
-    href: "/about"
+    href: "/about",
   },
   contact: {
-    heading: "Ready to modernize your infrastructure?",
-    description: "Schedule a technical consultation with our engineering team.",
-    ctaText: "Contact Us Today",
-    href: "/contact"
-  }
+    heading: "Ready to transform your business?",
+    description: "Whether you need a custom application, ERP implementation, or ongoing support, Smatel is the partner you can trust.",
+    ctaText: "Talk to an Expert",
+    href: "/contact",
+  },
 };

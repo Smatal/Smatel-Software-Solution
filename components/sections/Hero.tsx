@@ -110,8 +110,7 @@ export function Hero() {
 
           <motion.div variants={childVariant}>
             <h1 className="text-[clamp(2.5rem,6vw,5.2rem)] font-black tracking-tighter mb-8 text-foreground leading-[1.1]">
-              Your Search for <br />
-              <span className="text-indigo-600 drop-shadow-[0_0_20px_rgba(79,70,229,0.15)]">Innovation Starts Here.</span>
+              {hero.heading}
             </h1>
           </motion.div>
           

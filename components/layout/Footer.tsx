@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { AnimatedDarkWrapper } from "@/components/ui/animated-dark-wrapper";
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 lg:py-24 border-t border-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+    <footer className="bg-gray-900 border-t border-gray-800">
+      <AnimatedDarkWrapper className="text-gray-300 py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand & Intro */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
@@ -72,7 +74,8 @@ export function Footer() {
             <Link href="/terms" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</Link>
           </div>
         </div>
-      </div>
+        </div>
+      </AnimatedDarkWrapper>
     </footer>
   );
 }

@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#FAFAFA]">
+    <div className="flex-1 flex flex-col items-center justify-center min-h-[60vh]">
       <div className="relative flex flex-col items-center justify-center">
         {/* Outer Ring */}
         <div className="w-16 h-16 rounded-full border-4 border-indigo-100 border-t-indigo-600 animate-spin"></div>

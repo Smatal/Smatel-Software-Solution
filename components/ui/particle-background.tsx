@@ -101,7 +101,7 @@ class Particle {
   }
 }
 
-export function ParticleBackground() {
+export function ParticleBackground({ className = "fixed inset-0" }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -142,8 +142,14 @@ export function ParticleBackground() {
     };
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // Use parent container dimensions if absolute, otherwise window dimensions
+      if (className.includes('absolute') && canvas.parentElement) {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+      } else {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
       initParticles();
     };
 
@@ -151,8 +157,15 @@ export function ParticleBackground() {
     resize(); // Initialize
 
     const onMouseMove = (e: MouseEvent) => {
-      targetMouseX = e.clientX;
-      targetMouseY = e.clientY;
+      // Adjust mouse coordinates if canvas is absolute (relative to its parent)
+      if (className.includes('absolute') && canvas.parentElement) {
+        const rect = canvas.getBoundingClientRect();
+        targetMouseX = e.clientX - rect.left;
+        targetMouseY = e.clientY - rect.top;
+      } else {
+        targetMouseX = e.clientX;
+        targetMouseY = e.clientY;
+      }
     };
     
     const onMouseLeave = () => {
@@ -187,14 +200,14 @@ export function ParticleBackground() {
       window.removeEventListener("mouseleave", onMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [className]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none w-full h-full"
+      className={`${className} pointer-events-none`}
       style={{
-        zIndex: -1, // Remain behind all content
+        zIndex: 0, 
         // Force GPU acceleration
         transform: "translateZ(0)",
         willChange: "transform",

@@ -25,58 +25,56 @@ export function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 pointer-events-none">
       <header className="mx-auto max-w-6xl w-full rounded-2xl border border-white/40 bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] pointer-events-auto transition-all duration-300">
-        <div className="px-6 flex h-16 items-center justify-between">
+        <div className="px-6 flex h-16 items-center justify-between relative">
           
           {/* Logo */}
-          <div className="flex items-center gap-10">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-indigo-600 to-purple-500 shadow-sm group-hover:shadow-indigo-500/25 group-hover:scale-105 transition-all" />
-              <span className="font-black tracking-tight text-xl text-gray-900">SMATAL</span>
+          <Link href="/" className="flex items-center gap-2 group z-10 relative">
+            <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-indigo-600 to-purple-500 shadow-sm group-hover:shadow-indigo-500/25 group-hover:scale-105 transition-all" />
+            <span className="font-black tracking-tight text-xl text-gray-900">SMATAL</span>
+          </Link>
+
+          {/* Desktop Links */}
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+            <Link href="/" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+              Home
             </Link>
 
-            {/* Desktop Links */}
-            <nav className="hidden lg:flex items-center gap-1">
-              <Link href="/" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
-                Home
+            {/* Services Dropdown */}
+            <div className="relative group px-1">
+              <Link href="/services" className="flex items-center px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer">
+                Services <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
               </Link>
-
-              {/* Services Dropdown */}
-              <div className="relative group px-1">
-                <Link href="/services" className="flex items-center px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer">
-                  Services <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
-                </Link>
-                
-                {/* Dropdown Menu */}
-                <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 w-[600px]">
-                  <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 grid grid-cols-2 gap-x-8 gap-y-4 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl" />
-                    {serviceCategories.map((service) => (
-                      <Link 
-                        key={service.name} 
-                        href={service.href}
-                        className="flex items-center gap-3 p-2 rounded-xl hover:bg-gray-50 group/item transition-colors"
-                      >
-                        <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-colors">
-                          {service.icon}
-                        </div>
-                        <span className="font-medium text-gray-900 text-sm group-hover/item:text-indigo-600 transition-colors">{service.name}</span>
-                      </Link>
-                    ))}
-                  </div>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 w-[600px]">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 grid grid-cols-2 gap-x-8 gap-y-4 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl" />
+                  {serviceCategories.map((service) => (
+                    <Link 
+                      key={service.name} 
+                      href={service.href}
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-gray-50 group/item transition-colors"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-colors">
+                        {service.icon}
+                      </div>
+                      <span className="font-medium text-gray-900 text-sm group-hover/item:text-indigo-600 transition-colors">{service.name}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
+            </div>
 
-              <Link href="/portfolio" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
-                Portfolio
-              </Link>
-              <Link href="/testimonials" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
-                Testimonials
-              </Link>
-            </nav>
-          </div>
+            <Link href="/portfolio" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+              Portfolio
+            </Link>
+            <Link href="/testimonials" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+              Testimonials
+            </Link>
+          </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 z-10">
             <Link href="/contact" className={cn(buttonVariants({ variant: "default", size: "sm", className: "px-6 bg-indigo-600 hover:bg-indigo-500" }))}>
               Start a Project
             </Link>

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import { getPortfolioById, portfolioProjects } from "@/content/portfolio";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";

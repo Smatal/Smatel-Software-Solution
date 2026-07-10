@@ -3,29 +3,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { PortfolioHero } from "@/components/sections/PortfolioHero";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
-export default function PortfolioPage({ searchParams }: { searchParams: { category?: string } }) {
-  const currentCategory = searchParams.category || "All";
+export default async function PortfolioPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
+  const resolvedParams = await searchParams;
+  const currentCategory = resolvedParams.category || "All";
   const projects = currentCategory === "All" 
     ? portfolioProjects 
     : portfolioProjects.filter(p => p.tags.includes(currentCategory));
 
   return (
     <main className="flex flex-col min-h-screen">
-      <section className="pt-32 pb-20 bg-gray-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <Badge variant="outline" className="mb-6">Our Work</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-            Proven Results Across Industries
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our portfolio of digital transformations, custom software, and performance-driven campaigns.
-          </p>
-        </div>
-      </section>
+      <PortfolioHero />
 
-      <section className="py-12 bg-white sticky top-16 z-30 border-b border-gray-100 shadow-sm/50">
+      <section className="py-6 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-wrap gap-2 justify-center">
             {portfolioCategories.map(cat => (
@@ -56,7 +48,7 @@ export default function PortfolioPage({ searchParams }: { searchParams: { catego
                 <Link href={`/portfolio/${project.id}`} className="block relative aspect-[16/9] overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={project.name}
+                    alt={project.title || "Portfolio Project"}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 50vw"

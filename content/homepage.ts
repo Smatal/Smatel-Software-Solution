@@ -96,6 +96,27 @@ export const homepageData = {
       },
     ],
   },
+  featuredSolutions: {
+    heading: "Core Systems Built for Scale",
+    description: "Explore our most requested enterprise solutions, customized for your operational needs.",
+    systems: [
+      {
+        title: "Enterprise ERP",
+        description: "A comprehensive platform to unify your finance, operations, and HR into a single cohesive system.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+      },
+      {
+        title: "Smart CRM",
+        description: "Intelligent customer relationship management with automated workflows and predictive analytics.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        title: "Custom SaaS Platforms",
+        description: "Scalable, secure, and high-performance cloud applications tailored to your business model.",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+      }
+    ]
+  },
   industries: {
     heading: "Industries We Serve",
     description: "Customized solutions designed to meet the specific demands of your sector.",

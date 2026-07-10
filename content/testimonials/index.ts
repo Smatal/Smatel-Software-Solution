@@ -234,8 +234,8 @@ export function getTestimonialsBySlug(slug: string): Testimonial[] {
   return allTestimonials.filter((t) => t.solutionSlug === slug);
 }
 
-export function getFeaturedTestimonials(count = 3): Testimonial[] {
+export function getFeaturedTestimonials(count = 6): Testimonial[] {
   // Pick diverse testimonials from different solutions
-  const picks = ["mohammed-farhan", "anita-menon", "rahul-joshi"];
+  const picks = ["mohammed-farhan", "anita-menon", "rahul-joshi", "arjun-mehta", "kavitha-suresh", "ashwin-pillai", "margaret-dsouza", "suresh-natarajan"];
   return allTestimonials.filter((t) => picks.includes(t.id)).slice(0, count);
 }

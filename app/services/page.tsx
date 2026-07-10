@@ -2,16 +2,14 @@ import { homepageData } from "@/content/homepage";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { AnimatedHeroWrapper } from "@/components/ui/animated-hero-wrapper";
 
 export default function ServicesPage() {
   const { solutionCategories } = homepageData;
   return (
     <div className="flex flex-col min-h-screen">
       {/* Page Header */}
-      <section className="pt-32 pb-20 bg-[#FAFAFA] relative overflow-hidden border-b border-gray-100">
-        {/* Abstract Parallax Background */}
-        <div className="absolute inset-0 z-0 opacity-[0.35]" style={{ backgroundImage: 'linear-gradient(to right, rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,102,241,0.5) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
-        
+      <AnimatedHeroWrapper className="pt-32 pb-20 bg-[#FAFAFA] border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl relative z-10">
           <div className="inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-semibold text-indigo-600 mb-6 tracking-widest uppercase">
             End-to-End Solutions
@@ -23,7 +21,7 @@ export default function ServicesPage() {
             {solutionCategories.description}
           </p>
         </div>
-      </section>
+      </AnimatedHeroWrapper>
       
       {/* Services Grid */}
       <section className="py-24 bg-white">

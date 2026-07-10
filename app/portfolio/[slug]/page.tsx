@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { ArrowLeft as ArrowLeftIcon, ExternalLink, Calendar, User, Tag } from "lucide-react";
+import { AnimatedHeroWrapper } from "@/components/ui/animated-hero-wrapper";
 
 export async function generateStaticParams() {
   return portfolioProjects.map((p) => ({ slug: p.id }));
@@ -21,14 +23,14 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
   }
 
   return (
-    <main className="flex flex-col min-h-screen">
-      <section className="pt-32 pb-20 bg-[#FAFAFA] border-b border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div className="flex flex-col min-h-screen">
+      <AnimatedHeroWrapper className="pt-32 pb-20 bg-[#FAFAFA] border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
           <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800 mb-8 transition-colors">
-            <ArrowLeft className="mr-2 w-4 h-4" /> Back to Portfolio
+            <ArrowLeftIcon className="mr-2 w-4 h-4" /> Back to Portfolio
           </Link>
           
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 justify-center mb-6">
             <Badge variant="secondary" className="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border-none">
               {project.industry}
             </Badge>
@@ -57,7 +59,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedHeroWrapper>
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
@@ -145,6 +147,6 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

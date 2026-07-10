@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { SolutionHero } from "@/content/solutions/types";
+import { AnimatedHeroWrapper } from "@/components/ui/animated-hero-wrapper";
 
 interface SolutionHeroProps {
   data: SolutionHero;
@@ -14,21 +15,7 @@ interface SolutionHeroProps {
 
 export function SolutionHero({ data, badge }: SolutionHeroProps) {
   return (
-    <section className="relative overflow-hidden py-28 lg:py-36 bg-[#FAFAFA]">
-      {/* Grid background */}
-      <div className="absolute inset-0 z-0 opacity-[0.35] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,102,241,0.5) 1px, transparent 1px)`,
-          backgroundSize: "64px 64px",
-        }}
-      />
-      {/* Ambient glows */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
-      {/* Edge fade */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#FAFAFA_90%)] z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAFAFA] z-10 pointer-events-none" />
-
+    <AnimatedHeroWrapper className="py-28 lg:py-36 bg-[#FAFAFA]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -84,6 +71,6 @@ export function SolutionHero({ data, badge }: SolutionHeroProps) {
           </motion.div>
         </div>
       </div>
-    </section>
+    </AnimatedHeroWrapper>
   );
 }

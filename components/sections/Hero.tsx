@@ -9,6 +9,7 @@ import { motion, Variants, useMotionValue, useSpring, useMotionTemplate, useTran
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { AnimatedHeroWrapper } from "@/components/ui/animated-hero-wrapper";
 
 const orchestrator: Variants = {
   hidden: { opacity: 0 },
@@ -38,66 +39,13 @@ const childVariant: Variants = {
 export function Hero() {
   const { hero } = homepageData;
 
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
-
-  // Map mouse movement to subtle grid parallax (opposite direction)
-  const gridX = useTransform(springX, [0, 2000], [0, -60]);
-  const gridY = useTransform(springY, [0, 1000], [0, -60]);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
   return (
-    <motion.section 
-      className="relative overflow-hidden py-32 lg:py-48 bg-[#FAFAFA]"
+    <AnimatedHeroWrapper 
+      className="py-32 lg:py-48 bg-[#FAFAFA]"
       initial="hidden"
       animate="visible"
       variants={orchestrator}
-      onMouseMove={handleMouseMove}
     >
-      {/* Sharp Interactive Matrix Grid Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#FAFAFA]">
-        
-        {/* Parallax Grid Layer */}
-        <motion.div
-          className="absolute -inset-[10%] z-0 opacity-[0.35]"
-          style={{
-            backgroundImage: `linear-gradient(to right, rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,102,241,0.5) 1px, transparent 1px)`,
-            backgroundSize: "64px 64px",
-            x: gridX,
-            y: gridY,
-          }}
-        />
-
-        {/* Ambient Moving Color Glows (Parallax) */}
-        <motion.div 
-          className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]" 
-          style={{ x: useTransform(springX, [0, 2000], [0, -120]), y: useTransform(springY, [0, 1000], [0, -120]) }}
-        />
-        <motion.div 
-          className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" 
-          style={{ x: useTransform(springX, [0, 2000], [0, 120]), y: useTransform(springY, [0, 1000], [0, 120]) }}
-        />
-
-        {/* Interactive Mouse Spotlight illuminating the grid */}
-        <motion.div
-          className="absolute inset-0 z-20 mix-blend-overlay"
-          style={{
-            background: useMotionTemplate`radial-gradient(500px circle at ${springX}px ${springY}px, rgba(99,102,241,0.5), transparent 80%)`,
-          }}
-        />
-
-        {/* Fade Out Edges */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#FAFAFA_90%)] z-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAFAFA] z-20" />
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
@@ -151,6 +99,6 @@ export function Hero() {
 
         </div>
       </div>
-    </motion.section>
+    </AnimatedHeroWrapper>
   );
 }

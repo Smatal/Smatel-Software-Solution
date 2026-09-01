@@ -22,24 +22,45 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6 text-foreground">Get in touch</h2>
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-primary shrink-0 mt-1" />
+                  <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-700 shrink-0 mt-0.5">
+                    <MapPin className="w-6 h-6" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Global Headquarters</h3>
-                    <p className="text-muted-foreground mt-1">100 Enterprise Way, Suite 400<br/>San Francisco, CA 94105</p>
+                    <h3 className="font-semibold text-foreground">Chennai Headquarters</h3>
+                    <p className="text-muted-foreground mt-1 leading-relaxed">
+                      108, 109, Hameedia Complex, 2nd Floor,<br />
+                      Triplicane High Road, Triplicane,<br />
+                      Chennai - 600005, Tamil Nadu, India
+                    </p>
                   </div>
                 </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-700 shrink-0 mt-0.5">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Phone / WhatsApp</h3>
+                    <div className="flex flex-col space-y-1 mt-1">
+                      <a href="tel:+919649964912" className="text-muted-foreground hover:text-teal-700 transition-colors block">
+                        +91 96499 64912
+                      </a>
+                      <a href="tel:+919342217586" className="text-muted-foreground hover:text-teal-700 transition-colors block">
+                        +91 93422 17586
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-primary shrink-0" />
+                  <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-700 shrink-0">
+                    <Mail className="w-6 h-6" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground mt-1">hello@smatal.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-primary shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground mt-1">+1 (555) 123-4567</p>
+                    <a href="mailto:info@smatal.in" className="text-muted-foreground hover:text-primary transition-colors block mt-1">
+                      info@smatal.in
+                    </a>
                   </div>
                 </div>
               </div>

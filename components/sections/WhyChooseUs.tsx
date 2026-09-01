@@ -29,7 +29,7 @@ export function WhyChooseUs() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="flex items-start"
             >
-              <CheckCircle2 className="w-6 h-6 text-indigo-600 mt-1 shrink-0" />
+              <CheckCircle2 className="w-6 h-6 text-teal-600 mt-1 shrink-0" />
               <div className="ml-4">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{reason.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{reason.description}</p>

@@ -24,7 +24,7 @@ export function SolutionIndustries({ industries }: SolutionIndustriesProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05, duration: 0.4 }}
-              className="px-6 py-3 rounded-full bg-gray-50 border border-gray-200 text-gray-700 font-medium text-sm hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-colors cursor-default"
+              className="px-6 py-3 rounded-full bg-gray-50 border border-gray-200 text-gray-700 font-medium text-sm hover:bg-teal-50 hover:text-teal-700 hover:border-teal-300 transition-colors cursor-default"
             >
               {industry}
             </motion.div>

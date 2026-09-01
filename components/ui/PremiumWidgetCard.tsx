@@ -26,8 +26,9 @@ export function PremiumWidgetCard({ children, className = "" }: { children: Reac
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              400px circle at ${mouseX}px ${mouseY}px,
-              rgba(79, 70, 229, 0.15),
+              450px circle at ${mouseX}px ${mouseY}px,
+              rgba(33, 189, 188, 0.3),
+              rgba(243, 110, 33, 0.15) 50%,
               transparent 80%
             )
           `,
@@ -35,7 +36,7 @@ export function PremiumWidgetCard({ children, className = "" }: { children: Reac
       />
       
       {/* Underlying Pre-rendered Lift Shadow */}
-      <div className="pointer-events-none absolute inset-0 rounded-[2rem] shadow-[0_20px_40px_rgba(79,70,229,0.12)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 rounded-[2rem] shadow-[0_20px_40px_rgba(33,189,188,0.1)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       
       {/* Glass Shimmer Effect */}
       <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 group-hover:opacity-100 overflow-hidden">

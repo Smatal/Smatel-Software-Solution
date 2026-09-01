@@ -40,7 +40,7 @@ export function SolutionFAQ({ faqs }: SolutionFAQProps) {
           <Accordion className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b-gray-100 last:border-0">
-                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-indigo-600">
+                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-teal-700 transition-colors">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed text-base pb-6">

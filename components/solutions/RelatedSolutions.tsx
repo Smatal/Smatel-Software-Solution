@@ -31,7 +31,7 @@ export function RelatedSolutions({ relatedSlugs }: RelatedSolutionsProps) {
           <div>
             <Link 
               href="/services" 
-              className="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center group"
+              className="text-teal-700 hover:text-teal-900 font-semibold flex items-center group"
             >
               View All Services 
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -47,21 +47,21 @@ export function RelatedSolutions({ relatedSlugs }: RelatedSolutionsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group p-8 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-indigo-100 hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+                className="group p-8 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-teal-200 hover:shadow-lg transition-all duration-300 h-full flex flex-col"
               >
                 <div className="flex justify-between items-start mb-6">
                   <span className="text-4xl">{solution.icon}</span>
-                  <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-indigo-600 group-hover:border-indigo-200 transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-teal-700 group-hover:border-teal-200 transition-colors">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{solution.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">{solution.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
                   {solution.tagline}
                 </p>
                 
-                <div className="text-sm font-semibold text-indigo-600 group-hover:text-indigo-700 mt-auto flex items-center">
+                <div className="text-sm font-semibold text-teal-700 group-hover:text-teal-900 mt-auto flex items-center">
                   Learn more <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </motion.div>

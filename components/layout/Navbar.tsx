@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown, Monitor, Smartphone, Building, Users, Receipt, GraduationCap, TrendingUp, LifeBuoy } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
+import { SmatalLogo } from "@/components/ui/smatal-logo";
+
 const serviceCategories = [
   { name: "Custom Software", href: "/services/custom-software-development", icon: <Monitor className="w-5 h-5" /> },
   { name: "Web Development", href: "/services/web-development", icon: <Monitor className="w-5 h-5" /> },
@@ -24,74 +26,78 @@ export function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 pointer-events-none">
-      <header className="mx-auto max-w-6xl w-full rounded-2xl border border-white/40 bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] pointer-events-auto transition-all duration-300">
+      <header className="mx-auto max-w-6xl w-full rounded-2xl border border-white/60 bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all duration-300">
         <div className="px-6 flex h-16 items-center justify-between relative">
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-10 relative">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-indigo-600 to-purple-500 shadow-sm group-hover:shadow-indigo-500/25 group-hover:scale-105 transition-all" />
-            <span className="font-black tracking-tight text-xl text-gray-900">SMATAL</span>
+            <SmatalLogo size="md" />
           </Link>
 
           {/* Desktop Links */}
           <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
-            <Link href="/" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+            <Link href="/" className="px-3 py-1.5 text-sm font-semibold text-gray-700 hover:text-teal-700 rounded-lg hover:bg-teal-50/70 transition-colors">
               Home
             </Link>
 
             {/* Services Dropdown */}
             <div className="relative group px-1">
-              <Link href="/services" className="flex items-center px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer">
+              <Link href="/services" className="flex items-center px-3 py-1.5 text-sm font-semibold text-gray-700 hover:text-teal-700 rounded-lg hover:bg-teal-50/70 transition-colors cursor-pointer">
                 Services <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
               </Link>
               
               {/* Dropdown Menu */}
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 w-[600px]">
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 grid grid-cols-2 gap-x-8 gap-y-4 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-3xl" />
                   {serviceCategories.map((service) => (
                     <Link 
                       key={service.name} 
                       href={service.href}
-                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-gray-50 group/item transition-colors"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-teal-50/60 group/item transition-colors"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-colors">
+                      <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-700 group-hover/item:bg-gradient-to-r group-hover/item:from-[#21BDBC] group-hover/item:to-[#38BDF8] group-hover/item:text-white transition-all">
                         {service.icon}
                       </div>
-                      <span className="font-medium text-gray-900 text-sm group-hover/item:text-indigo-600 transition-colors">{service.name}</span>
+                      <span className="font-medium text-gray-900 text-sm group-hover/item:text-teal-700 transition-colors">{service.name}</span>
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
 
-            <Link href="/portfolio" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+            <Link href="/portfolio" className="px-3 py-1.5 text-sm font-semibold text-gray-700 hover:text-teal-700 rounded-lg hover:bg-teal-50/70 transition-colors">
               Portfolio
             </Link>
-            <Link href="/testimonials" className="px-3 py-1.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+            <Link href="/testimonials" className="px-3 py-1.5 text-sm font-semibold text-gray-700 hover:text-teal-700 rounded-lg hover:bg-teal-50/70 transition-colors">
               Testimonials
             </Link>
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4 z-10">
-            <Link href="/contact" className={cn(buttonVariants({ variant: "default", size: "sm", className: "px-6 bg-indigo-600 hover:bg-indigo-500" }))}>
+          {/* Desktop Right CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link 
+              href="/contact" 
+              className={cn(buttonVariants({ size: "sm", className: "h-9 px-4 font-semibold text-xs uppercase tracking-wider" }))}
+            >
               Start a Project
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile menu trigger */}
+          <div className="flex items-center lg:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -110,13 +116,13 @@ export function Navbar() {
                 <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-bold text-gray-900 mb-4 block">
                   Services
                 </Link>
-                <div className="grid grid-cols-1 gap-2 pl-4 border-l-2 border-indigo-50">
+                <div className="grid grid-cols-1 gap-2 pl-4 border-l-2 border-teal-100">
                   {serviceCategories.map((service) => (
                     <Link 
                       key={service.name} 
                       href={service.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-gray-600 hover:text-indigo-600 py-2 font-medium"
+                      className="text-gray-600 hover:text-teal-700 py-2 font-medium"
                     >
                       {service.name}
                     </Link>
@@ -135,7 +141,7 @@ export function Navbar() {
               <Link 
                 href="/contact" 
                 onClick={() => setMobileMenuOpen(false)}
-                className={cn(buttonVariants({ size: "lg", className: "w-full mt-4 bg-indigo-600 hover:bg-indigo-500" }))}
+                className={cn(buttonVariants({ size: "lg", className: "w-full mt-4 font-semibold" }))}
               >
                 Start a Project
               </Link>

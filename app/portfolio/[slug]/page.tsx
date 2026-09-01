@@ -26,12 +26,12 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
     <div className="flex flex-col min-h-screen">
       <AnimatedHeroWrapper className="pt-32 pb-20 bg-[#FAFAFA] border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
-          <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800 mb-8 transition-colors">
+          <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-teal-700 hover:text-teal-900 mb-8 transition-colors">
             <ArrowLeftIcon className="mr-2 w-4 h-4" /> Back to Portfolio
           </Link>
           
           <div className="flex flex-wrap gap-2 justify-center mb-6">
-            <Badge variant="secondary" className="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border-none">
+            <Badge variant="secondary" className="bg-teal-50 text-teal-700 hover:bg-teal-100 border-none">
               {project.industry}
             </Badge>
             <Badge variant="outline" className="border-gray-200 text-gray-600">
@@ -63,15 +63,33 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-          <div className="relative aspect-video rounded-2xl overflow-hidden mb-20 shadow-lg border border-gray-100">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 1024px) 100vw, 1024px"
-            />
+          <div className="rounded-2xl overflow-hidden mb-20 shadow-2xl border border-slate-800 bg-slate-950">
+            {/* Window Chrome */}
+            <div className="bg-slate-900 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              </div>
+              <span className="text-xs font-mono text-slate-400 bg-slate-950/80 px-4 py-1 rounded-full border border-slate-800">
+                https://smatal.cloud/products/{project.id}
+              </span>
+              <div className="w-12 text-right">
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              </div>
+            </div>
+            
+            <div className="relative aspect-video overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover opacity-95"
+                priority
+                sizes="(max-width: 1024px) 100vw, 1024px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
@@ -88,7 +106,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
 
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm mr-3">02</span>
+                  <span className="w-8 h-8 rounded-full bg-teal-50 text-teal-700 flex items-center justify-center text-sm mr-3 font-semibold">02</span>
                   Our Solution
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -122,15 +140,15 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
               </div>
 
               {project.testimonial && (
-                <div className="bg-indigo-900 rounded-2xl p-8 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 rounded-full blur-[40px] -mr-10 -mt-10" />
-                  <Quote className="w-8 h-8 text-indigo-400 mb-6" />
-                  <p className="text-indigo-50 text-lg font-medium leading-relaxed mb-6 relative z-10">
+                <div className="bg-slate-900 rounded-2xl p-8 relative overflow-hidden shadow-lg border border-slate-800">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full blur-[40px] -mr-10 -mt-10" />
+                  <Quote className="w-8 h-8 text-teal-400 mb-6" />
+                  <p className="text-slate-100 text-lg font-medium leading-relaxed mb-6 relative z-10">
                     "{project.testimonial.quote}"
                   </p>
                   <div>
                     <h4 className="font-bold text-white">{project.testimonial.name}</h4>
-                    <p className="text-indigo-200 text-sm">{project.testimonial.role}</p>
+                    <p className="text-slate-400 text-sm">{project.testimonial.role}</p>
                   </div>
                 </div>
               )}

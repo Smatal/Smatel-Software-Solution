@@ -31,26 +31,26 @@ export function AnimatedHeroWrapper({ children, className, ...props }: HeroWrapp
     >
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#FAFAFA]">
         <motion.div
-          className="absolute -inset-[10%] z-0 opacity-[0.35]"
+          className="absolute -inset-[10%] z-0 opacity-[0.22]"
           style={{
-            backgroundImage: `linear-gradient(to right, rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(99,102,241,0.5) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(to right, rgba(33,189,188,0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(33,189,188,0.2) 1px, transparent 1px)`,
             backgroundSize: "64px 64px",
             x: gridX,
             y: gridY,
           }}
         />
         <motion.div 
-          className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]" 
+          className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-teal-500/12 rounded-full blur-[130px]" 
           style={{ x: useTransform(springX, [0, 2000], [0, -120]), y: useTransform(springY, [0, 1000], [0, -120]) }}
         />
         <motion.div 
-          className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" 
+          className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-cyan-500/12 rounded-full blur-[130px]" 
           style={{ x: useTransform(springX, [0, 2000], [0, 120]), y: useTransform(springY, [0, 1000], [0, 120]) }}
         />
         <motion.div
           className="absolute inset-0 z-20 mix-blend-overlay"
           style={{
-            background: useMotionTemplate`radial-gradient(500px circle at ${springX}px ${springY}px, rgba(99,102,241,0.5), transparent 80%)`,
+            background: useMotionTemplate`radial-gradient(550px circle at ${springX}px ${springY}px, rgba(33,189,188,0.25), transparent 80%)`,
           }}
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#FAFAFA_90%)] z-20" />

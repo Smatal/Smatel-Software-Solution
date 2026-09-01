@@ -11,7 +11,7 @@ export function ContactCTA() {
   const { contact } = homepageData;
 
   return (
-    <section className="bg-gray-900 border-t border-gray-800">
+    <section className="bg-slate-950 border-t border-slate-800">
       <AnimatedDarkWrapper className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
@@ -22,7 +22,7 @@ export function ContactCTA() {
           </p>
           <Link 
             href={contact.href}
-            className={cn(buttonVariants({ size: "lg", className: "h-14 px-8 text-lg bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-xl transition-all" }))}
+            className={cn(buttonVariants({ size: "lg", className: "h-14 px-8 text-lg font-semibold shadow-[0_4px_20px_rgba(33,189,188,0.35)] hover:shadow-[0_6px_30px_rgba(33,189,188,0.55)] transition-all" }))}
           >
             {contact.ctaText} <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

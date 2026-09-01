@@ -51,7 +51,7 @@ export function Hero() {
         <div className="max-w-5xl mx-auto text-center">
           
           <motion.div variants={childVariant}>
-            <Badge variant="secondary" className="mb-8 px-4 py-1.5 text-sm font-semibold tracking-widest uppercase border-gray-200">
+            <Badge variant="secondary" className="mb-8 px-4 py-1.5 text-sm font-semibold tracking-widest uppercase border border-teal-500/30 bg-teal-500/10 text-teal-700 shadow-[0_0_15px_rgba(33,189,188,0.12)]">
               {hero.badge}
             </Badge>
           </motion.div>
@@ -76,7 +76,7 @@ export function Hero() {
             >
               <Link 
                 href={hero.primaryCta.href}
-                className={cn(buttonVariants({ size: "lg", className: "h-12 px-8 font-medium shadow-[0_4px_14px_0_rgba(79,70,229,0.25)] transition-shadow hover:shadow-[0_6px_20px_rgba(79,70,229,0.4)] w-full" }))}
+                className={cn(buttonVariants({ size: "lg", className: "h-12 px-8 font-medium shadow-[0_4px_14px_0_rgba(243,110,33,0.3)] transition-shadow hover:shadow-[0_6px_20px_rgba(243,110,33,0.45)] w-full" }))}
               >
                 {hero.primaryCta.text} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

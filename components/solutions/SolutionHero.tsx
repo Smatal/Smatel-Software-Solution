@@ -23,7 +23,7 @@ export function SolutionHero({ data, badge }: SolutionHeroProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-semibold text-indigo-600 mb-8 tracking-widest uppercase">
+            <span className="inline-flex items-center rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5 text-sm font-semibold text-teal-700 mb-8 tracking-widest uppercase shadow-[0_0_12px_rgba(33,189,188,0.12)]">
               {badge || data.badge}
             </span>
           </motion.div>
@@ -55,7 +55,7 @@ export function SolutionHero({ data, badge }: SolutionHeroProps) {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 400, damping: 15 }}>
               <Link
                 href={data.cta.href}
-                className={cn(buttonVariants({ size: "lg", className: "h-12 px-8 font-medium shadow-[0_4px_14px_0_rgba(79,70,229,0.25)] hover:shadow-[0_6px_20px_rgba(79,70,229,0.4)] transition-shadow w-full" }))}
+                className={cn(buttonVariants({ size: "lg", className: "h-12 px-8 font-medium shadow-[0_4px_14px_0_rgba(33,189,188,0.35)] hover:shadow-[0_6px_20px_rgba(33,189,188,0.55)] transition-shadow w-full" }))}
               >
                 {data.cta.text} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

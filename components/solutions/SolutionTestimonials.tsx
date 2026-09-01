@@ -50,7 +50,7 @@ export function SolutionTestimonials({ testimonials }: SolutionTestimonialsProps
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="bg-gray-50 rounded-2xl p-8 relative border border-gray-100 shadow-sm"
             >
-              <Quote className="absolute top-8 right-8 w-12 h-12 text-indigo-100 rotate-180" />
+              <Quote className="absolute top-8 right-8 w-12 h-12 text-teal-100 rotate-180" />
               
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (

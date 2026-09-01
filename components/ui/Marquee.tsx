@@ -26,7 +26,7 @@ export function Marquee({ className, items }: MarqueeProps) {
             )}>
               {item}
             </span>
-            <span className="text-2xl text-indigo-600">✦</span>
+            <span className="text-2xl text-[#21BDBC]">✦</span>
           </div>
         ))}
       </div>

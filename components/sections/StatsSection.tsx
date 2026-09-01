@@ -41,16 +41,17 @@ export function StatsSection() {
   const { stats } = homepageData;
 
   return (
-    <section className="py-20 bg-indigo-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950 via-indigo-900 to-indigo-800 opacity-90" />
+    <section className="py-20 bg-slate-950 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950 opacity-95" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px] pointer-events-none" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             {stats.heading}
           </h2>
-          <p className="text-lg text-indigo-200">
+          <p className="text-lg text-slate-300">
             {stats.description}
           </p>
         </div>
@@ -65,10 +66,10 @@ export function StatsSection() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-md">
+              <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-[#21BDBC] via-white to-[#FCB814] bg-clip-text text-transparent mb-2 drop-shadow-md">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-sm font-medium text-indigo-200 uppercase tracking-wider">
+              <p className="text-sm font-medium text-slate-300 uppercase tracking-wider">
                 {stat.label}
               </p>
             </motion.div>

@@ -10,7 +10,7 @@ export default function TermsOfServicePage() {
     <div className="flex flex-col min-h-screen">
       <AnimatedHeroWrapper className="pt-32 pb-20 bg-[#FAFAFA] border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl relative z-10">
-          <div className="inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-semibold text-indigo-600 mb-6 tracking-widest uppercase">
+          <div className="inline-flex items-center rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5 text-sm font-semibold text-teal-700 mb-6 tracking-widest uppercase shadow-[0_0_12px_rgba(33,189,188,0.12)]">
             Legal
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 leading-tight">
@@ -24,7 +24,7 @@ export default function TermsOfServicePage() {
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <div className="prose prose-lg prose-indigo max-w-none text-gray-600">
+          <div className="prose prose-lg prose-teal max-w-none text-gray-600">
             <p className="lead text-xl text-gray-900 font-medium mb-8">
               Welcome to {siteConfig.name}! These terms and conditions outline the rules and regulations for the use of our Website and Services.
             </p>
@@ -67,7 +67,7 @@ export default function TermsOfServicePage() {
 
             <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">7. Contact Us</h2>
             <p className="mb-6">
-              If you have any questions about these Terms, please <Link href="/contact" className="text-indigo-600 hover:text-indigo-800 font-medium">contact us</Link>.
+              If you have any questions about these Terms, please <Link href="/contact" className="text-teal-700 hover:text-teal-900 font-medium">contact us</Link>.
             </p>
           </div>
         </div>

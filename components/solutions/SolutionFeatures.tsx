@@ -80,13 +80,13 @@ export function SolutionFeatures({ features }: SolutionFeaturesProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(79,70,229,0.1)" }}
-              className="group p-6 rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 cursor-default"
+              whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(33,189,188,0.15)" }}
+              className="group p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:border-teal-200 transition-all duration-300 cursor-default"
             >
-              <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-700 mb-5 group-hover:bg-gradient-to-r group-hover:from-[#21BDBC] group-hover:to-[#38BDF8] group-hover:text-white transition-all duration-300">
                 {iconMap[feature.icon] || <Zap className="w-6 h-6" />}
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">{feature.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}

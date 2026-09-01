@@ -60,13 +60,13 @@ export function BusinessChallenges({ challenges }: BusinessChallengesProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group flex gap-5 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:border-indigo-200 hover:bg-indigo-50/30 hover:shadow-md transition-all duration-300"
+              className="group flex gap-5 p-6 rounded-2xl border border-gray-100 bg-gray-50 hover:border-teal-200 hover:bg-teal-50/30 hover:shadow-md transition-all duration-300"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-500 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors duration-300">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-700 group-hover:bg-gradient-to-r group-hover:from-[#21BDBC] group-hover:to-[#38BDF8] group-hover:text-white transition-all duration-300">
                 {iconMap[challenge.icon] || <AlertTriangle className="w-6 h-6" />}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{challenge.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">{challenge.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{challenge.description}</p>
               </div>
             </motion.div>

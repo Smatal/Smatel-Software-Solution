@@ -41,7 +41,7 @@ export function PortfolioHero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <motion.div variants={childVariant}>
-            <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-semibold tracking-widest uppercase border-gray-200 shadow-sm">
+            <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-semibold tracking-widest uppercase border border-teal-500/30 bg-teal-500/10 text-teal-700 shadow-[0_0_12px_rgba(33,189,188,0.12)]">
               Our Work
             </Badge>
           </motion.div>

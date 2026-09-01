@@ -3,33 +3,53 @@
 import { homepageData } from "@/content/homepage";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowRight, Laptop, Building2, Factory, TrendingUp, LifeBuoy, Globe, Smartphone, Users, Receipt, GraduationCap } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { 
+  ArrowRight, 
+  Laptop, 
+  Building2, 
+  Factory, 
+  TrendingUp, 
+  LifeBuoy, 
+  Globe, 
+  Smartphone, 
+  Users, 
+  Receipt, 
+  GraduationCap,
+  Layers
+} from "lucide-react";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { Badge } from "@/components/ui/badge";
 
 const iconMap: Record<string, React.ReactNode> = {
-  laptop: <Laptop className="w-8 h-8 text-indigo-600" />,
-  building: <Building2 className="w-8 h-8 text-indigo-600" />,
-  factory: <Factory className="w-8 h-8 text-indigo-600" />,
-  "trending-up": <TrendingUp className="w-8 h-8 text-indigo-600" />,
-  "life-buoy": <LifeBuoy className="w-8 h-8 text-indigo-600" />,
-  globe: <Globe className="w-8 h-8 text-indigo-600" />,
-  smartphone: <Smartphone className="w-8 h-8 text-indigo-600" />,
-  users: <Users className="w-8 h-8 text-indigo-600" />,
-  receipt: <Receipt className="w-8 h-8 text-indigo-600" />,
-  "graduation-cap": <GraduationCap className="w-8 h-8 text-indigo-600" />,
+  laptop: <Laptop className="w-7 h-7" />,
+  building: <Building2 className="w-7 h-7" />,
+  factory: <Factory className="w-7 h-7" />,
+  "trending-up": <TrendingUp className="w-7 h-7" />,
+  "life-buoy": <LifeBuoy className="w-7 h-7" />,
+  globe: <Globe className="w-7 h-7" />,
+  smartphone: <Smartphone className="w-7 h-7" />,
+  users: <Users className="w-7 h-7" />,
+  receipt: <Receipt className="w-7 h-7" />,
+  "graduation-cap": <GraduationCap className="w-7 h-7" />,
 };
 
 export function SolutionCategories() {
   const { solutionCategories } = homepageData;
 
   return (
-    <section id="solutions" className="py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section id="solutions" className="py-24 bg-white relative overflow-hidden">
+      {/* Ambient background light */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-teal-500/5 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <Badge variant="outline" className="mb-4 border-teal-500/30 bg-teal-500/10 text-teal-700">
+            Engineered For Scale
+          </Badge>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
             {solutionCategories.heading}
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 leading-relaxed">
             {solutionCategories.description}
           </p>
         </div>
@@ -40,37 +60,51 @@ export function SolutionCategories() {
               key={category.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: index * 0.08, duration: 0.4 }}
               className="h-full"
             >
-              <Card className="h-full flex flex-col border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
-                    <div className="group-hover:text-white [&>svg]:transition-colors [&>svg]:duration-300">
-                      {iconMap[category.icon] || <Laptop className="w-8 h-8 text-indigo-600" />}
+              <Link href={`/services/${category.slug}`} className="block h-full group">
+                <SpotlightCard className="h-full min-h-[380px] p-8 border-gray-200/80 bg-white/95">
+                  <div>
+                    {/* Header Icon Tile */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-13 h-13 rounded-2xl bg-slate-50 border border-slate-100/80 flex items-center justify-center text-teal-700 group-hover:bg-teal-50/80 group-hover:border-teal-200/60 transition-colors duration-300">
+                        {iconMap[category.icon] || <Layers className="w-7 h-7" />}
+                      </div>
+                      <Badge variant="outline" className="text-[11px] font-medium text-slate-500 bg-slate-50 border-slate-200/80 group-hover:text-teal-700 group-hover:border-teal-200/60 transition-colors">
+                        Modular Architecture
+                      </Badge>
+                    </div>
+
+                    <h3 className="text-2xl font-bold mb-2 text-gray-900 tracking-tight group-hover:text-teal-800 transition-colors">
+                      {category.title}
+                    </h3>
+                    <p className="font-semibold text-teal-700 mb-4 text-sm">
+                      {category.tagline}
+                    </p>
+
+                    <div className="mb-6">
+                      <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider block mb-1">
+                        Operational Problem Solved
+                      </span>
+                      <p className="text-sm text-gray-600 leading-relaxed font-normal">
+                        {category.businessProblem}
+                      </p>
                     </div>
                   </div>
-                  <CardTitle className="text-xl mb-1">{category.title}</CardTitle>
-                  <p className="text-sm font-medium text-indigo-600">{category.tagline}</p>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <div className="mb-4">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">The Problem</span>
-                    <CardDescription className="text-sm text-gray-700 leading-relaxed mt-1">
-                      {category.businessProblem}
-                    </CardDescription>
+
+                  {/* Bottom Action Link */}
+                  <div className="pt-4 border-t border-gray-100/80 flex items-center justify-between mt-auto">
+                    <span className="text-xs font-mono text-gray-400">
+                      smatal.cloud/{category.slug}
+                    </span>
+                    <div className="flex items-center text-sm font-semibold text-teal-700 group-hover:text-teal-900 transition-colors">
+                      Explore Solution <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1.5" />
+                    </div>
                   </div>
-                </CardContent>
-                <CardFooter className="pt-0 pb-6 border-t border-gray-50 mt-auto px-6">
-                  <Link 
-                    href={`/services/${category.slug}`}
-                    className="flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors pt-4 w-full"
-                  >
-                    Learn More <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </CardFooter>
-              </Card>
+                </SpotlightCard>
+              </Link>
             </motion.div>
           ))}
         </div>

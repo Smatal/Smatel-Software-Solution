@@ -60,16 +60,16 @@ export function FeaturedSolutions() {
                   {system.description}
                 </p>
                 <ul className="space-y-4">
-                  <li className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 rounded-full bg-indigo-600 mr-3" />
+                  <li className="flex items-center text-gray-700 font-medium">
+                    <div className="w-2.5 h-2.5 rounded-full bg-teal-500 mr-3 shrink-0" />
                     Customized for your workflows
                   </li>
-                  <li className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 rounded-full bg-indigo-600 mr-3" />
+                  <li className="flex items-center text-gray-700 font-medium">
+                    <div className="w-2.5 h-2.5 rounded-full bg-teal-500 mr-3 shrink-0" />
                     Secure and scalable architecture
                   </li>
-                  <li className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 rounded-full bg-indigo-600 mr-3" />
+                  <li className="flex items-center text-gray-700 font-medium">
+                    <div className="w-2.5 h-2.5 rounded-full bg-teal-500 mr-3 shrink-0" />
                     Seamless integrations
                   </li>
                 </ul>

@@ -36,7 +36,7 @@ export function OurSolution({ data }: OurSolutionProps) {
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-6">
+              <p className="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-6">
                 What You Get
               </p>
               <ul className="space-y-4">
@@ -49,7 +49,7 @@ export function OurSolution({ data }: OurSolutionProps) {
                     transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-teal-700 shrink-0 mt-0.5" />
                     <span className="text-gray-800 font-medium">{highlight}</span>
                   </motion.li>
                 ))}

@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Smatal Software Solution",
-  fullName: "Smatal Software Solution",
+  name: "Smatal Software Solutions",
+  fullName: "Smatal Software Solutions",
   parentCompany: "Smatal Computer Academy",
   description: "Intelligent Infrastructure & End-to-End Digital Solutions for Growing Businesses.",
   url: "https://www.smatal.in",

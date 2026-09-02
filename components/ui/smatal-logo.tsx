@@ -49,11 +49,11 @@ export function SmatalLogo({
   size = "md",
   showText = true,
   showSubtitle = true,
-  subtitleText = "Software Solution",
+  subtitleText = "Software Solutions",
   variant = "stacked",
   textColor,
 }: SmatalLogoProps) {
-  // 1. Stacked Layout (Default: Tree on top, smatal in middle, Software Solution directly below)
+  // 1. Stacked Layout (Default: Tree on top, smatal in middle, Software Solutions directly below)
   if (variant === "stacked") {
     const stackedSizeMap = {
       xs: {

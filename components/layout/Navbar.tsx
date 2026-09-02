@@ -27,7 +27,7 @@ export function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 pointer-events-none">
       <header className="mx-auto max-w-6xl w-full rounded-2xl border border-white/60 bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all duration-300">
-        <div className="px-6 flex h-16 items-center justify-between relative">
+        <div className="px-6 flex h-[68px] items-center justify-between relative">
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-10 relative">

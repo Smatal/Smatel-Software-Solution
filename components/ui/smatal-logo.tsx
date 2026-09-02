@@ -5,10 +5,11 @@ import { cn } from "@/lib/utils";
 
 interface SmatalLogoProps {
   className?: string;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   showText?: boolean;
   showSubtitle?: boolean;
-  variant?: "horizontal" | "stacked" | "emblem-only";
+  subtitleText?: string;
+  variant?: "stacked" | "horizontal" | "emblem-only";
   textColor?: string;
 }
 
@@ -16,7 +17,7 @@ interface SmatalLogoProps {
 const PATHS = {
   // Orange spiral frond (bottom right)
   orangeSpiral:
-    "M 181.359375 95.839844 C 179.1875 91.777344 175.519531 88.503906 170.878906 86.984375 C 170.5625 86.882812 170.246094 86.789062 169.933594 86.703125 C 166.246094 85.714844 162.480469 85.960938 159.117188 87.207031 C 157.164062 87.929688 156.152344 90.144531 156.859375 92.148438 C 157.566406 94.15625 159.722656 95.191406 161.675781 94.46875 C 163.660156 93.734375 165.847656 93.589844 168.027344 94.171875 C 168.214844 94.222656 168.402344 94.277344 168.589844 94.339844 C 171.339844 95.242188 173.46875 97.148438 174.761719 99.554688 C 176.046875 101.964844 176.460938 104.828125 175.742188 107.644531 C 175.695312 107.832031 175.644531 108.019531 175.585938 108.203125 C 174.714844 111.015625 172.871094 113.1875 170.53125 114.507812 C 168.195312 115.820312 165.410156 116.246094 162.660156 115.507812 C 162.476562 115.457031 162.289062 115.402344 162.101562 115.339844 C 160.730469 114.890625 159.527344 114.183594 158.492188 113.300781 C 158.097656 112.839844 157.769531 112.308594 157.546875 111.683594 C 157.195312 110.675781 157.171875 109.664062 157.414062 108.707031 C 157.613281 107.929688 157.992188 107.203125 158.515625 106.601562 C 159.039062 106.003906 159.699219 105.53125 160.5 105.234375 C 161.484375 104.871094 162.46875 104.847656 163.402344 105.097656 C 164.160156 105.300781 164.867188 105.691406 165.453125 106.226562 C 166.035156 106.765625 166.496094 107.441406 166.785156 108.265625 C 167.488281 110.269531 169.648438 111.308594 171.601562 110.585938 C 173.558594 109.863281 174.570312 107.648438 173.863281 105.644531 C 173.148438 103.601562 171.957031 101.839844 170.476562 100.476562 C 168.992188 99.113281 167.222656 98.140625 165.308594 97.625 C 162.964844 96.996094 160.390625 97.066406 157.945312 97.972656 C 155.953125 98.707031 154.238281 99.929688 152.910156 101.449219 C 151.582031 102.96875 150.632812 104.789062 150.132812 106.75 C 149.515625 109.15625 149.585938 111.796875 150.46875 114.304688 C 150.980469 115.765625 151.742188 117.074219 152.671875 118.203125 C 152.835938 118.445312 153.027344 118.675781 153.253906 118.878906 C 153.277344 118.898438 153.300781 118.917969 153.324219 118.9375 C 153.976562 119.617188 154.691406 120.21875 155.464844 120.722656 C 155.75 120.910156 156.050781 121.046875 156.355469 121.144531 C 157.4375 121.773438 158.589844 122.296875 159.8125 122.695312 C 160.125 122.796875 160.441406 122.890625 160.757812 122.976562 C 165.421875 124.230469 170.199219 123.503906 174.152344 121.277344 C 178.109375 119.058594 181.289062 115.296875 182.761719 110.539062 C 182.855469 110.226562 182.945312 109.914062 183.023438 109.601562 C 184.246094 104.8125 183.535156 99.902344 181.359375 95.839844",
+    "M 181.359375 95.839844 C 179.1875 91.777344 175.519531 88.503906 170.878906 86.984375 C 170.5625 86.882812 170.246094 86.789062 169.933594 86.703125 C 166.246094 85.714844 162.480469 85.960938 159.117188 87.207031 C 157.164062 87.929688 156.152344 90.144531 158.859375 92.148438 C 157.566406 94.15625 159.722656 95.191406 161.675781 94.46875 C 163.660156 93.734375 165.847656 93.589844 168.027344 94.171875 C 168.214844 94.222656 168.402344 94.277344 168.589844 94.339844 C 171.339844 95.242188 173.46875 97.148438 174.761719 99.554688 C 176.046875 101.964844 176.460938 104.828125 175.742188 107.644531 C 175.695312 107.832031 175.644531 108.019531 175.585938 108.203125 C 174.714844 111.015625 172.871094 113.1875 170.53125 114.507812 C 168.195312 115.820312 165.410156 116.246094 162.660156 115.507812 C 162.476562 115.457031 162.289062 115.402344 162.101562 115.339844 C 160.730469 114.890625 159.527344 114.183594 158.492188 113.300781 C 158.097656 112.839844 157.769531 112.308594 157.546875 111.683594 C 157.195312 110.675781 157.171875 109.664062 157.414062 108.707031 C 157.613281 107.929688 157.992188 107.203125 158.515625 106.601562 C 159.039062 106.003906 159.699219 105.53125 160.5 105.234375 C 161.484375 104.871094 162.46875 104.847656 163.402344 105.097656 C 164.160156 105.300781 164.867188 105.691406 165.453125 106.226562 C 166.035156 106.765625 166.496094 107.441406 166.785156 108.265625 C 167.488281 110.269531 169.648438 111.308594 171.601562 110.585938 C 173.558594 109.863281 174.570312 107.648438 173.863281 105.644531 C 173.148438 103.601562 171.957031 101.839844 170.476562 100.476562 C 168.992188 99.113281 167.222656 98.140625 165.308594 97.625 C 162.964844 96.996094 160.390625 97.066406 157.945312 97.972656 C 155.953125 98.707031 154.238281 99.929688 152.910156 101.449219 C 151.582031 102.96875 150.632812 104.789062 150.132812 106.75 C 149.515625 109.15625 149.585938 111.796875 150.46875 114.304688 C 150.980469 115.765625 151.742188 117.074219 152.671875 118.203125 C 152.835938 118.445312 153.027344 118.675781 153.253906 118.878906 C 153.277344 118.898438 153.300781 118.917969 153.324219 118.9375 C 153.976562 119.617188 154.691406 120.21875 155.464844 120.722656 C 155.75 120.910156 156.050781 121.046875 156.355469 121.144531 C 157.4375 121.773438 158.589844 122.296875 159.8125 122.695312 C 160.125 122.796875 160.441406 122.890625 160.757812 122.976562 C 165.421875 124.230469 170.199219 123.503906 174.152344 121.277344 C 178.109375 119.058594 181.289062 115.296875 182.761719 110.539062 C 182.855469 110.226562 182.945312 109.914062 183.023438 109.601562 C 184.246094 104.8125 183.535156 99.902344 181.359375 95.839844",
 
   // Teal spiral frond (top center)
   tealSpiral:
@@ -47,67 +48,86 @@ export function SmatalLogo({
   className,
   size = "md",
   showText = true,
-  showSubtitle = false,
-  variant = "horizontal",
+  showSubtitle = true,
+  subtitleText = "Software Solution",
+  variant = "stacked",
   textColor,
 }: SmatalLogoProps) {
-  const sizeMap = {
-    sm: {
-      emblem: "w-7 h-7",
-      wordmark: "h-5",
-      subText: "text-[9px] tracking-wider",
-      gap: "gap-2",
-    },
-    md: {
-      emblem: "w-9 h-9",
-      wordmark: "h-6",
-      subText: "text-[10px] tracking-wider",
-      gap: "gap-2.5",
-    },
-    lg: {
-      emblem: "w-11 h-11",
-      wordmark: "h-8",
-      subText: "text-xs tracking-wider",
-      gap: "gap-3",
-    },
-    xl: {
-      emblem: "w-16 h-16",
-      wordmark: "h-11",
-      subText: "text-sm tracking-wider",
-      gap: "gap-3.5",
-    },
-  };
-
-  const { emblem, wordmark, subText, gap } = sizeMap[size];
-
-  // 1. Stacked full logo (Emblem on top, smatal below)
+  // 1. Stacked Layout (Default: Tree on top, smatal in middle, Software Solution directly below)
   if (variant === "stacked") {
+    const stackedSizeMap = {
+      xs: {
+        svgHeight: "h-7",
+        textSize: "text-[9.5px]",
+        gap: "mt-0.5",
+      },
+      sm: {
+        svgHeight: "h-9",
+        textSize: "text-[11px]",
+        gap: "mt-0.5",
+      },
+      md: {
+        svgHeight: "h-11",
+        textSize: "text-[12.5px]",
+        gap: "mt-0.5",
+      },
+      lg: {
+        svgHeight: "h-16",
+        textSize: "text-[15px]",
+        gap: "mt-1",
+      },
+      xl: {
+        svgHeight: "h-24",
+        textSize: "text-[19px]",
+        gap: "mt-1.5",
+      },
+    };
+
+    const config = stackedSizeMap[size] || stackedSizeMap.md;
+
     return (
-      <div className={cn("inline-flex flex-col items-center select-none group", className)}>
+      <div className={cn("inline-flex flex-col items-center justify-center select-none group shrink-0", className)}>
         <svg
-          viewBox="0 0 216 216"
+          viewBox="10 16 196 156"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto max-w-[180px] transform transition-transform duration-300 group-hover:scale-105"
+          className={cn("w-auto transform transition-transform duration-300 group-hover:scale-105", config.svgHeight)}
         >
-          {/* Orange spiral */}
+          {/* Tree Fronds */}
           <path d={PATHS.orangeSpiral} fill="#F36E21" />
-          {/* Teal spiral */}
           <path d={PATHS.tealSpiral} fill="#21BDBC" />
-          {/* Green spiral */}
           <path d={PATHS.greenSpiral} fill="#85BC3A" />
-          {/* Yellow spiral */}
           <path d={PATHS.yellowSpiral} fill="#FCB814" />
-          {/* Tree trunk */}
-          <path d={PATHS.treeTrunk} fill="currentColor" className="text-slate-900 dark:text-white" />
-          {/* sma */}
+          {/* Tree Trunk */}
+          <path
+            d={PATHS.treeTrunk}
+            fill="currentColor"
+            className={textColor || "text-slate-950 dark:text-white"}
+          />
+          {/* Wordmark sma */}
           <path d={PATHS.sma} fill="#85BC3A" />
-          {/* tal */}
-          <path d={PATHS.tal} fill="currentColor" className="text-slate-900 dark:text-white" />
+          {/* Wordmark tal */}
+          <path
+            d={PATHS.tal}
+            fill="currentColor"
+            className={textColor || "text-slate-950 dark:text-white"}
+          />
         </svg>
+
+        {/* Crisp, highly legible subtitle text */}
         {showSubtitle && (
-          <span className="mt-1.5 font-semibold text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-            Software Solution
+          <span
+            className={cn(
+              "font-bold tracking-tight whitespace-nowrap leading-none select-none",
+              textColor || "text-slate-900 dark:text-slate-100",
+              config.textSize,
+              config.gap
+            )}
+            style={{
+              fontFamily: "var(--font-geist-sans), Inter, system-ui, -apple-system, sans-serif",
+            }}
+          >
+            {subtitleText}
           </span>
         )}
       </div>
@@ -116,64 +136,68 @@ export function SmatalLogo({
 
   // 2. Emblem only
   if (variant === "emblem-only" || !showText) {
+    const emblemSizes = {
+      xs: "w-6 h-6",
+      sm: "w-8 h-8",
+      md: "w-10 h-10",
+      lg: "w-12 h-12",
+      xl: "w-16 h-16",
+    };
+
     return (
-      <div className={cn("relative shrink-0 flex items-center justify-center select-none group", emblem, className)}>
+      <div className={cn("relative shrink-0 flex items-center justify-center select-none group", emblemSizes[size] || emblemSizes.md, className)}>
         <svg
           viewBox="74 16 112 110"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full transform transition-transform duration-300 group-hover:scale-105"
         >
-          {/* Orange spiral */}
           <path d={PATHS.orangeSpiral} fill="#F36E21" />
-          {/* Teal spiral */}
           <path d={PATHS.tealSpiral} fill="#21BDBC" />
-          {/* Green spiral */}
           <path d={PATHS.greenSpiral} fill="#85BC3A" />
-          {/* Yellow spiral */}
           <path d={PATHS.yellowSpiral} fill="#FCB814" />
-          {/* Tree trunk */}
           <path d={PATHS.treeTrunk} fill="currentColor" className="text-slate-900 dark:text-white" />
         </svg>
       </div>
     );
   }
 
-  // 3. Default Clean Horizontal Lockup (Authentic Emblem + Vector Wordmark)
+  // 3. Horizontal Lockup (Emblem on left, text on right)
+  const horizontalSizes = {
+    xs: { emblem: "w-6 h-6", wordmark: "h-4", subText: "text-[8px]", gap: "gap-1.5" },
+    sm: { emblem: "w-7 h-7", wordmark: "h-4.5", subText: "text-[9px]", gap: "gap-2" },
+    md: { emblem: "w-9 h-9", wordmark: "h-5.5", subText: "text-[10.5px]", gap: "gap-2.5" },
+    lg: { emblem: "w-11 h-11", wordmark: "h-7", subText: "text-[12px]", gap: "gap-3" },
+    xl: { emblem: "w-16 h-16", wordmark: "h-10", subText: "text-sm", gap: "gap-3.5" },
+  };
+
+  const hConfig = horizontalSizes[size] || horizontalSizes.md;
+
   return (
-    <div className={cn("inline-flex items-center select-none group", gap, className)}>
-      {/* Authentic Vector Tree Emblem */}
-      <div className={cn("relative shrink-0 flex items-center justify-center", emblem)}>
+    <div className={cn("inline-flex items-center select-none group", hConfig.gap, className)}>
+      <div className={cn("relative shrink-0 flex items-center justify-center", hConfig.emblem)}>
         <svg
           viewBox="74 16 112 110"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full transform transition-transform duration-300 group-hover:scale-105"
         >
-          {/* Orange spiral */}
           <path d={PATHS.orangeSpiral} fill="#F36E21" />
-          {/* Teal spiral */}
           <path d={PATHS.tealSpiral} fill="#21BDBC" />
-          {/* Green spiral */}
           <path d={PATHS.greenSpiral} fill="#85BC3A" />
-          {/* Yellow spiral */}
           <path d={PATHS.yellowSpiral} fill="#FCB814" />
-          {/* Tree trunk */}
           <path d={PATHS.treeTrunk} fill="currentColor" className="text-slate-900 dark:text-white" />
         </svg>
       </div>
 
-      {/* Vector Wordmark */}
       <div className="flex flex-col justify-center">
         <svg
           viewBox="12 118 184 54"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={cn("w-auto", wordmark)}
+          className={cn("w-auto", hConfig.wordmark)}
         >
-          {/* sma */}
           <path d={PATHS.sma} fill="#85BC3A" />
-          {/* tal */}
           <path
             d={PATHS.tal}
             fill="currentColor"
@@ -184,11 +208,12 @@ export function SmatalLogo({
         {showSubtitle && (
           <span
             className={cn(
-              "font-medium uppercase leading-none mt-1 text-slate-500 dark:text-slate-400",
-              subText
+              "leading-none mt-0.5 select-none font-semibold",
+              textColor ? "text-slate-300" : "text-slate-700 dark:text-slate-200",
+              hConfig.subText
             )}
           >
-            Software Solution
+            {subtitleText}
           </span>
         )}
       </div>
